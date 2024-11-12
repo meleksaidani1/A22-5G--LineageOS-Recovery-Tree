@@ -27,6 +27,9 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/a22x/device.mk)
 
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -34,7 +37,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a22x/recovery/root,recovery/root)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := twrp_a22x
+PRODUCT_NAME := lineage_a22x
 PRODUCT_DEVICE := a22x
 PRODUCT_MODEL := SM-A226B
 PRODUCT_BRAND := samsung
